@@ -19,20 +19,20 @@ const ROUTES: Route[] = [
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, {
       scrollPositionRestoration: 'enabled'
     })
   ],
   declarations: [
+    BarChartComponent,
     DashboardComponent,
-    ViewsFilterComponent,
+    FilterStateDisplayComponent,
+    TopListComponent,
     VideoContainerComponent,
     ViewsBreakdownComponent,
-    BarChartComponent,
-    TopListComponent,
-    FilterStateDisplayComponent
+    ViewsFilterComponent
   ]
 })
 export class DashboardModule {}

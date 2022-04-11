@@ -12,6 +12,7 @@ import { GraphData, getGraphData } from './graph-helper';
 })
 export class GraphService {
   graphData: Observable<GraphData>;
+
   constructor(dashboardService: DashboardService) {
     this.graphData = combineLatest([
       dashboardService.currentVideo,

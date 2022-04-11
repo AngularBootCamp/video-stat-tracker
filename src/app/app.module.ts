@@ -14,12 +14,12 @@ const ROUTES: Route[] = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    DashboardModule,
     RouterModule.forRoot(ROUTES, {
       useHash: true,
       scrollPositionRestoration: 'enabled'
     }),
-    DashboardModule
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

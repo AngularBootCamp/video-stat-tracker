@@ -19,9 +19,10 @@ export class VideoContainerComponent {
       // source of attack. Tell Angular we have vetted the URL as
       // safe to use. (You would normally check the URL before passing it
       // on )
-      this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
-        URLPREFIX + '/' + value.id
-      );
+      this.videoUrl =
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          URLPREFIX + '/' + value.id
+        );
     }
   }
 

@@ -2,6 +2,8 @@
   <div class="card-content">
     <div class="card-title">Views Breakdown</div>
     <vst-filter-state-display></vst-filter-state-display>
-    <vst-bar-chart [graphData]="graphData | async"></vst-bar-chart>
+    <vst-bar-chart
+      [graphData]="(graphData | async) ?? undefined"
+    ></vst-bar-chart>
   </div>
 </div>
