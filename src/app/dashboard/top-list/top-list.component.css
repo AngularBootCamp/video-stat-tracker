@@ -2,6 +2,11 @@ img {
   width: 100%;
 }
 
+.collection {
+  overflow: auto;
+  height: 80vh;
+}
+
 .collection-item {
   cursor: pointer;
 }
