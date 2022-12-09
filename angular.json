@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "defaultProject": "video-stat-tracker",
   "newProjectRoot": "projects",
   "projects": {
     "video-stat-tracker": {
