@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, combineLatest } from 'rxjs';
-import { filter, map, startWith } from 'rxjs/operators';
+import {
+  Observable,
+  combineLatest,
+  filter,
+  map,
+  startWith
+} from 'rxjs';
 
 import { DashboardService } from '../dashboard.service';
 import { FilterOptions, Video } from '../dashboard.types';

@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { format, startOfDay } from 'date-fns';
-import { Observable, combineLatest } from 'rxjs';
 import {
+  Observable,
+  combineLatest,
   map,
   shareReplay,
   tap,
   withLatestFrom
-} from 'rxjs/operators';
+} from 'rxjs';
 
 import { Video } from './dashboard.types';
 
