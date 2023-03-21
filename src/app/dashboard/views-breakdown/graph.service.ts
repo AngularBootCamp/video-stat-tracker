@@ -27,7 +27,7 @@ export class GraphService {
     ]).pipe(
       filter(([video]) => !!video),
       map(([video, formValue]) =>
-        getGraphData(video as Video, formValue)
+        getGraphData(video as Video, formValue as FilterOptions)
       )
     );
   }

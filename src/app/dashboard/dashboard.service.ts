@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  NonNullableFormBuilder
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { format, startOfDay } from 'date-fns';
 import {
@@ -20,7 +24,15 @@ const apiUrl = 'https://api.angularbootcamp.com';
   providedIn: 'root'
 })
 export class DashboardService {
-  filterForm: FormGroup;
+  filterForm: FormGroup<{
+    region: FormControl<string>;
+    dateTo: FormControl<string>;
+    dateFrom: FormControl<string>;
+    minor: FormControl<boolean>;
+    adults: FormControl<boolean>;
+    middleAged: FormControl<boolean>;
+    retired: FormControl<boolean>;
+  }>;
   currentVideo: Observable<Video | undefined>;
   videoList: Observable<Video[]>;
 
@@ -29,7 +41,7 @@ export class DashboardService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    formBuilder: FormBuilder,
+    formBuilder: NonNullableFormBuilder,
     activeRoute: ActivatedRoute
   ) {
     this.selectedVideoId = activeRoute.queryParamMap.pipe(

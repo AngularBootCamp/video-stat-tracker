@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { DashboardService } from '../dashboard.service';
 
@@ -12,7 +12,15 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./views-filter.component.css']
 })
 export class ViewsFilterComponent {
-  filterFormGroup: FormGroup;
+  filterFormGroup: FormGroup<{
+    region: FormControl<string>;
+    dateTo: FormControl<string>;
+    dateFrom: FormControl<string>;
+    minor: FormControl<boolean>;
+    adults: FormControl<boolean>;
+    middleAged: FormControl<boolean>;
+    retired: FormControl<boolean>;
+  }>;
 
   constructor(dashboardService: DashboardService) {
     this.filterFormGroup = dashboardService.filterForm;

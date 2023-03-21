@@ -1,8 +1,8 @@
 export interface FilterOptions
   extends Record<string, string | number | boolean> {
   region: string;
-  dateTo: number;
-  dateFrom: number;
+  dateTo: string;
+  dateFrom: string;
   minor: boolean;
   adults: boolean;
   middleAged: boolean;
