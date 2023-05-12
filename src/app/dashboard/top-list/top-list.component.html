@@ -1,16 +1,21 @@
-<p class="title">Top 10 Preview</p>
-<div class="collection">
+<h2>Top 10 Preview</h2>
+
+<div class="list">
   <a
     *ngFor="let video of topList"
-    class="collection-item"
     (click)="selectVideo(video)"
-    [class.active]="video.id === selectedVideo?.id"
+    [class.highlighted]="video.id === selectedVideo?.id"
   >
-    <img
-      src="http://img.youtube.com/vi/{{ video.id }}/0.jpg"
-      alt="Top 10 Video"
-    />
-    <p>{{ video.title }} - {{ video.author }}</p>
+    <figure>
+      <img
+        src="http://img.youtube.com/vi/{{ video.id }}/0.jpg"
+        alt="Top 10 Video"
+      />
+      <figcaption>
+        <span class="title">{{ video.title }}</span>
+        <span class="author">{{ video.author }}</span>
+      </figcaption>
+    </figure>
   </a>
 </div>
 

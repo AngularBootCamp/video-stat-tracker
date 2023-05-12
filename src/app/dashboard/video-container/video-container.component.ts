@@ -8,7 +8,7 @@ const URLPREFIX = 'https://www.youtube.com/embed/';
 @Component({
   selector: 'vst-video-container',
   templateUrl: './video-container.component.html',
-  styleUrls: ['./video-container.component.css']
+  styleUrls: ['./video-container.component.scss']
 })
 export class VideoContainerComponent {
   // Using an input setter is much more concise than
@@ -18,7 +18,7 @@ export class VideoContainerComponent {
       // iframe src attributes are a potential
       // source of attack. Tell Angular we have vetted the URL as
       // safe to use. (You would normally check the URL before passing it
-      // on )
+      // on.)
       this.videoUrl =
         this.domSanitizer.bypassSecurityTrustResourceUrl(
           URLPREFIX + '/' + value.id

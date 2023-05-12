@@ -6,7 +6,8 @@ import { GraphService } from './graph.service';
 
 @Component({
   selector: 'vst-views-breakdown',
-  templateUrl: './views-breakdown.component.html'
+  templateUrl: './views-breakdown.component.html',
+  styleUrls: ['./views-breakdown.component.scss']
 })
 export class ViewsBreakdownComponent {
   graphData: Observable<GraphData>;

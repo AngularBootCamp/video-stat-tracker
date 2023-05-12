@@ -5,7 +5,8 @@ import { DashboardService } from '../../dashboard.service';
 
 @Component({
   selector: 'vst-filter-state-display',
-  templateUrl: './filter-state-display.component.html'
+  templateUrl: './filter-state-display.component.html',
+  styleUrls: ['./filter-state-display.component.scss']
 })
 export class FilterStateDisplayComponent {
   filterForm: FormGroup<{

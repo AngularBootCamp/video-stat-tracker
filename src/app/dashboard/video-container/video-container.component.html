@@ -1,9 +1,7 @@
-<div class="video-container z-depth-2" *ngIf="videoUrl">
-  <iframe
-    width="560"
-    height="315"
-    [src]="videoUrl"
-    allowfullscreen
-    title="Video Container"
-  ></iframe>
-</div>
+<iframe
+  *ngIf="videoUrl"
+  [src]="videoUrl"
+  title="Video Container"
+  frameborder="0"
+  allow="fullscreen; accelerometer; autoplay; encrypted-media; gyroscope;"
+></iframe>

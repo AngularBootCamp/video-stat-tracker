@@ -7,7 +7,7 @@ import { Video } from './dashboard.types';
 @Component({
   selector: 'vst-app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
   videoList: Observable<Video[]>;

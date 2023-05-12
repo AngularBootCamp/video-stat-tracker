@@ -3,13 +3,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 import { DashboardService } from '../dashboard.service';
 
-// Unline the top-list component, this one is tightly coupled
+// Unlike the top-list component, this one is tightly coupled
 // to the service. This approach is helpful for more complex features
-// that do not lend them selves well to reuse.
+// that do not lend themselves well to reuse.
 @Component({
   selector: 'vst-views-filter',
   templateUrl: './views-filter.component.html',
-  styleUrls: ['./views-filter.component.css']
+  styleUrls: ['./views-filter.component.scss']
 })
 export class ViewsFilterComponent {
   filterFormGroup: FormGroup<{
