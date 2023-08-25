@@ -18,7 +18,7 @@ export class Rect {
   width?: number;
   height?: number;
 
-  constructor(public value: any, public count: number) {}
+  constructor(public value: string, public count: number) {}
 }
 
 export class GraphData {
