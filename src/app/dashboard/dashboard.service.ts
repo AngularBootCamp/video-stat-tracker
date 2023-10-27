@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
@@ -6,11 +7,10 @@ import {
   NonNullableFormBuilder
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { format, startOfDay } from 'date-fns';
 import {
-  Observable,
   combineLatest,
   map,
+  Observable,
   shareReplay,
   tap,
   withLatestFrom
@@ -107,4 +107,13 @@ export class DashboardService {
       queryParams: { videoId: video.id }
     });
   }
+}
+
+function format(date: Date | number, format: string): string {
+  return formatDate(date, format, 'en-US');
+}
+
+function startOfDay(date: Date): Date {
+  date.setHours(0, 0, 0, 0);
+  return date;
 }
