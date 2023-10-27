@@ -1,6 +1,3 @@
-import { isWithinInterval } from 'date-fns';
-import { countBy, forEach, maxBy } from 'lodash-es';
-
 import { FilterOptions, Video, VideoView } from '../dashboard.types';
 
 const GRAPH_HEIGHT = 200;
@@ -34,7 +31,7 @@ export class GraphData {
 
   // In order to create the bars in the bar chart we need to perform the following
   // 1. Filter any values based on user input
-  // 2. Identify all of the unique values associated with the xAxis
+  // 2. Identify all the unique values associated with the xAxis
   // 3. Count the number of views associated with each values
   // 4. Determine the largest of these categories
   // 5. Scale all counts based on largest and the graph height
@@ -45,7 +42,7 @@ export class GraphData {
     const filteredViews = filterViews(views, viewsFilter);
     if (filteredViews.length) {
       const groups = countBy(filteredViews, 'age');
-      forEach(groups, (value, key) => {
+      Object.entries(groups).forEach(([key, value]) => {
         rects.push(new Rect(key, value));
       });
       // rects now have value and count
@@ -111,4 +108,62 @@ function filterViews(views: VideoView[], viewsFilter: FilterOptions) {
     });
   });
   return filteredResults;
+}
+
+// Simplified and typed port of lodash's countBy, which doesn't
+// work on StackBlitz
+function countBy(
+  collection: VideoView[],
+  property: keyof VideoView
+): Record<string | number, number> {
+  return collection.reduce((result, value) => {
+    const key = value[property];
+    if (Object.prototype.hasOwnProperty.call(result, key)) {
+      ++result[key];
+    } else {
+      result[key] = 1;
+    }
+    return result;
+  }, {} as Record<string, number>);
+}
+
+// Simplified and typed port of maxBy's countBy, which doesn't
+// work on StackBlitz
+function maxBy<T>(array: T[], property: keyof T): T | undefined {
+  let result: T | undefined = undefined;
+
+  let computed: T[keyof T] | undefined = undefined;
+  for (const value of array) {
+    const current: T[keyof T] = value[property];
+
+    if (
+      current !== undefined &&
+      current !== null &&
+      (computed === undefined || computed === null
+        ? current === current
+        : current > computed)
+    ) {
+      computed = current;
+      result = value;
+    }
+  }
+  return result;
+}
+
+// Simplified port of date-fns's countBy, which doesn't work on
+// StackBlitz
+function isWithinInterval(
+  date: Date,
+  interval: { start: Date; end: Date }
+): boolean {
+  const time = Number(date);
+  const startTime = Number(interval.start);
+  const endTime = Number(interval.end);
+
+  // Throw an exception if start date is after end date or if any date is `Invalid Date`
+  if (!(startTime <= endTime)) {
+    throw new RangeError('Invalid interval');
+  }
+
+  return time >= startTime && time <= endTime;
 }
