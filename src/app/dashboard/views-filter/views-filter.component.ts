@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule
+} from '@angular/forms';
 
 import { DashboardService } from '../dashboard.service';
 
@@ -9,7 +13,9 @@ import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'vst-views-filter',
   templateUrl: './views-filter.component.html',
-  styleUrls: ['./views-filter.component.scss']
+  styleUrls: ['./views-filter.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule]
 })
 export class ViewsFilterComponent {
   filterFormGroup: FormGroup<{
