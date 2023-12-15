@@ -10,7 +10,7 @@ import { GraphService } from './graph.service';
 @Component({
   selector: 'vst-views-breakdown',
   templateUrl: './views-breakdown.component.html',
-  styleUrls: ['./views-breakdown.component.scss'],
+  styleUrl: './views-breakdown.component.scss',
   standalone: true,
   imports: [FilterStateDisplayComponent, BarChartComponent, AsyncPipe]
 })

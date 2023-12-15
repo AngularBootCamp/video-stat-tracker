@@ -12,7 +12,7 @@ import { ViewsFilterComponent } from './views-filter/views-filter.component';
 @Component({
   selector: 'vst-app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  styleUrl: './dashboard.component.scss',
   standalone: true,
   imports: [
     TopListComponent,

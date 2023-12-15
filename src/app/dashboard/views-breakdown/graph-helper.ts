@@ -15,7 +15,10 @@ export class Rect {
   width?: number;
   height?: number;
 
-  constructor(public value: string, public count: number) {}
+  constructor(
+    public value: string,
+    public count: number
+  ) {}
 }
 
 export class GraphData {
@@ -116,15 +119,18 @@ function countBy(
   collection: VideoView[],
   property: keyof VideoView
 ): Record<string | number, number> {
-  return collection.reduce((result, value) => {
-    const key = value[property];
-    if (Object.prototype.hasOwnProperty.call(result, key)) {
-      ++result[key];
-    } else {
-      result[key] = 1;
-    }
-    return result;
-  }, {} as Record<string, number>);
+  return collection.reduce(
+    (result, value) => {
+      const key = value[property];
+      if (Object.prototype.hasOwnProperty.call(result, key)) {
+        ++result[key];
+      } else {
+        result[key] = 1;
+      }
+      return result;
+    },
+    {} as Record<string, number>
+  );
 }
 
 // Simplified and typed port of maxBy's countBy, which doesn't

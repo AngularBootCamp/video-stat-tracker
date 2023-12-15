@@ -13,7 +13,7 @@ import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'vst-views-filter',
   templateUrl: './views-filter.component.html',
-  styleUrls: ['./views-filter.component.scss'],
+  styleUrl: './views-filter.component.scss',
   standalone: true,
   imports: [ReactiveFormsModule]
 })

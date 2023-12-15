@@ -9,14 +9,16 @@ const URLPREFIX = 'https://www.youtube.com/embed/';
 @Component({
   selector: 'vst-video-container',
   templateUrl: './video-container.component.html',
-  styleUrls: ['./video-container.component.scss'],
+  styleUrl: './video-container.component.scss',
   standalone: true,
   imports: [NgIf]
 })
 export class VideoContainerComponent {
   // Using an input setter is much more concise than
   // the use of ngOnChanges
-  @Input() set currentVideo(value: Video | undefined) {
+  @Input({ required: true }) set currentVideo(
+    value: Video | undefined
+  ) {
     if (value) {
       // iframe src attributes are a potential
       // source of attack. Tell Angular we have vetted the URL as

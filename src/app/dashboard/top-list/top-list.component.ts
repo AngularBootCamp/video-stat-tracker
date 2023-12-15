@@ -14,13 +14,13 @@ import { Video } from '../dashboard.types';
 @Component({
   selector: 'vst-top-list',
   templateUrl: './top-list.component.html',
-  styleUrls: ['./top-list.component.scss'],
+  styleUrl: './top-list.component.scss',
   standalone: true,
   imports: [NgFor]
 })
 export class TopListComponent {
-  @Input() topList: Video[] = [];
-  @Input() selectedVideo: Video | undefined;
+  @Input({ required: true }) topList!: Video[];
+  @Input({ required: true }) selectedVideo: Video | undefined;
   @Output() videoChanged = new EventEmitter<Video>();
 
   selectVideo(video: Video) {

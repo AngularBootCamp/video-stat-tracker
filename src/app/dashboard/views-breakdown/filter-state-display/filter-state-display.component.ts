@@ -7,7 +7,7 @@ import { DashboardService } from '../../dashboard.service';
 @Component({
   selector: 'vst-filter-state-display',
   templateUrl: './filter-state-display.component.html',
-  styleUrls: ['./filter-state-display.component.scss'],
+  styleUrl: './filter-state-display.component.scss',
   standalone: true,
   imports: [NgIf, DatePipe]
 })
