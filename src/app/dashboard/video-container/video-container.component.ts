@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -10,8 +9,7 @@ const URLPREFIX = 'https://www.youtube.com/embed/';
   selector: 'vst-video-container',
   templateUrl: './video-container.component.html',
   styleUrl: './video-container.component.scss',
-  standalone: true,
-  imports: [NgIf]
+  standalone: true
 })
 export class VideoContainerComponent {
   // Using an input setter is much more concise than

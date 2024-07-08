@@ -1,4 +1,4 @@
-import { NgIf, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { DashboardService } from '../../dashboard.service';
   templateUrl: './filter-state-display.component.html',
   styleUrl: './filter-state-display.component.scss',
   standalone: true,
-  imports: [NgIf, DatePipe]
+  imports: [DatePipe]
 })
 export class FilterStateDisplayComponent {
   filterForm: FormGroup<{

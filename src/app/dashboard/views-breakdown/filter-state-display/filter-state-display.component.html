@@ -10,15 +10,15 @@
 </span>
 
 <span class="filter-label">Age Groups</span>
-<span *ngIf="filterForm.controls.minor.value" class="chip">
-  Minors
-</span>
-<span *ngIf="filterForm.controls.adults.value" class="chip">
-  Adults
-</span>
-<span *ngIf="filterForm.controls.middleAged.value" class="chip">
-  Middle Aged
-</span>
-<span *ngIf="filterForm.controls.retired.value" class="chip">
-  Retired
-</span>
+@if (filterForm.controls.minor.value) {
+  <span class="chip">Minors</span>
+}
+@if (filterForm.controls.adults.value) {
+  <span class="chip">Adults</span>
+}
+@if (filterForm.controls.middleAged.value) {
+  <span class="chip">Middle Aged</span>
+}
+@if (filterForm.controls.retired.value) {
+  <span class="chip">Retired</span>
+}

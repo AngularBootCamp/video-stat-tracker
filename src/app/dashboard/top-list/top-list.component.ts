@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -15,8 +14,7 @@ import { Video } from '../dashboard.types';
   selector: 'vst-top-list',
   templateUrl: './top-list.component.html',
   styleUrl: './top-list.component.scss',
-  standalone: true,
-  imports: [NgFor]
+  standalone: true
 })
 export class TopListComponent {
   @Input({ required: true }) topList!: Video[];

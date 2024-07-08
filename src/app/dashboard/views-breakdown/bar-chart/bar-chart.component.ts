@@ -1,4 +1,3 @@
-import { NgIf, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { GraphData } from '../graph-helper';
@@ -7,8 +6,7 @@ import { GraphData } from '../graph-helper';
   selector: 'vst-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrl: './bar-chart.component.scss',
-  standalone: true,
-  imports: [NgIf, NgFor]
+  standalone: true
 })
 export class BarChartComponent {
   @Input({ required: true }) graphData: GraphData | undefined;

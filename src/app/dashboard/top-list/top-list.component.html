@@ -1,22 +1,23 @@
 <h2>Top 10 Preview</h2>
 
 <div class="list">
-  <a
-    *ngFor="let video of topList"
-    (click)="selectVideo(video)"
-    [class.highlighted]="video.id === selectedVideo?.id"
-  >
-    <figure>
-      <img
-        src="http://img.youtube.com/vi/{{ video.id }}/0.jpg"
-        alt="Top 10 Video"
-      />
-      <figcaption>
-        <span class="title">{{ video.title }}</span>
-        <span class="author">{{ video.author }}</span>
-      </figcaption>
-    </figure>
-  </a>
+  @for (video of topList; track video) {
+    <a
+      (click)="selectVideo(video)"
+      [class.highlighted]="video.id === selectedVideo?.id"
+    >
+      <figure>
+        <img
+          src="http://img.youtube.com/vi/{{ video.id }}/0.jpg"
+          alt="Top 10 Video"
+        />
+        <figcaption>
+          <span class="title">{{ video.title }}</span>
+          <span class="author">{{ video.author }}</span>
+        </figcaption>
+      </figure>
+    </a>
+  }
 </div>
 
 <!--
@@ -26,9 +27,9 @@
   abstraction. By maintaining this abstraction it allows
   for a change in how selected video is maintained without
   the need to update this component.
--->
+  -->
 
 <!--
   [routerLink]=""
   [queryParams]="{ videoId: video.id }"
--->
+  -->
